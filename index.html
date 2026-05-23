@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cyber West — Páginas web y marketing digital en Costa Rica</title>
+<meta name="description" content="Diseñamos páginas web profesionales y estrategias de marketing digital para negocios costarricenses. Planes desde ₡45.000."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Serif+Display&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+<style>
+:root{
+  --bg:#F8F6F1;
+  --bg2:#EFECE5;
+  --txt:#1A1714;
+  --txt2:#6B6560;
+  --txt3:#9E9892;
+  --accent:#1A3A6B;
+  --accent2:#2450A0;
+  --border:#DDD9D0;
+  --white:#FFFFFF;
+  --danger:#C1440E;
+  --info:#1B4F8A;
+  --r:10px;
+  --font-body:'DM Sans',sans-serif;
+  --font-display:'DM Serif Display',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--txt);background:var(--bg);font-size:16px;line-height:1.6}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:var(--r);font-size:14px;font-weight:500;cursor:pointer;border:none;transition:all .2s;font-family:var(--font-body)}
+.btn-dark{background:var(--txt);color:var(--white)}
+.btn-dark:hover{background:#333}
+.btn-outline{background:transparent;border:1.5px solid var(--border);color:var(--txt)}
+.btn-outline:hover{background:var(--bg2)}
+.btn-blue{background:var(--accent);color:var(--white)}
+.btn-blue:hover{background:var(--accent2)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(248,246,241,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:var(--font-display);font-size:22px;color:var(--txt)}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px;font-size:14px;color:var(--txt2)}
+.nav-links a:hover{color:var(--txt)}
+.nav-cta{display:flex;gap:10px}
+
+/* HERO */
+.hero{min-height:88vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 48px 64px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(26,58,107,.08) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:99px;font-size:12px;font-weight:500;background:var(--white);border:1px solid var(--border);color:var(--txt2);margin-bottom:28px}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block}
+.hero h1{font-family:var(--font-display);font-size:clamp(36px,6vw,68px);line-height:1.1;max-width:720px;margin-bottom:24px;color:var(--txt)}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero p{font-size:18px;color:var(--txt2);max-width:480px;margin:0 auto 40px;line-height:1.7}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);font-size:12px;color:var(--txt3);display:flex;flex-direction:column;align-items:center;gap:6px}
+.hero-scroll::after{content:'';display:block;width:1px;height:32px;background:var(--border);margin:0 auto}
+
+/* SECTIONS */
+.section{padding:88px 48px;max-width:1000px;margin:0 auto}
+.section-label{font-size:11px;font-weight:500;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:14px}
+.section-title{font-family:var(--font-display);font-size:clamp(28px,4vw,40px);line-height:1.2;margin-bottom:16px}
+.section-sub{font-size:16px;color:var(--txt2);max-width:440px;line-height:1.7}
+.divider{border:none;border-top:1px solid var(--border);margin:0 48px}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:2px;margin-top:48px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.svc{background:var(--white);padding:28px;transition:background .2s}
+.svc:hover{background:var(--bg2)}
+.svc i{font-size:24px;color:var(--accent);margin-bottom:18px;display:block}
+.svc h3{font-size:15px;font-weight:500;margin-bottom:8px}
+.svc p{font-size:13px;color:var(--txt2);line-height:1.6}
+
+/* PROBLEMS */
+.problems-wrap{background:var(--bg2);padding:88px 48px}
+.problems-inner{max-width:1000px;margin:0 auto}
+.problems-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:48px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--white)}
+.prob{padding:22px 26px;display:flex;gap:16px;align-items:flex-start;border-bottom:1px solid var(--border)}
+.prob:nth-child(odd){border-right:1px solid var(--border)}
+.prob i{font-size:20px;color:var(--danger);flex-shrink:0;margin-top:2px}
+.prob h4{font-size:14px;font-weight:500;margin-bottom:4px}
+.prob p{font-size:12px;color:var(--txt2);line-height:1.5}
+
+/* PROCESS */
+.process-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.step{background:var(--white);padding:28px;border-right:1px solid var(--border)}
+.step:last-child{border-right:none}
+.step-num{font-family:var(--font-display);font-size:32px;color:var(--border);margin-bottom:16px}
+.step h3{font-size:15px;font-weight:500;margin-bottom:8px}
+.step p{font-size:13px;color:var(--txt2);line-height:1.6}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px}
+.stat{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:28px;text-align:center}
+.stat .num{font-family:var(--font-display);font-size:40px;color:var(--accent);margin-bottom:6px}
+.stat p{font-size:13px;color:var(--txt2)}
+
+/* PLANS */
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.plan{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:32px;display:flex;flex-direction:column}
+.plan.featured{border:2px solid var(--accent);position:relative}
+.plan-badge{display:inline-block;font-size:11px;padding:4px 12px;border-radius:99px;background:var(--accent);color:var(--white);margin-bottom:18px;font-weight:500}
+.plan h3{font-size:16px;font-weight:500;margin-bottom:10px}
+.plan .price-main{font-family:var(--font-display);font-size:32px;margin-bottom:4px}
+.plan .price-sub{font-size:12px;color:var(--txt2);margin-bottom:8px}
+.plan .desc{font-size:13px;color:var(--txt2);line-height:1.6;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid var(--border)}
+.plan ul{list-style:none;flex:1;margin-bottom:28px}
+.plan ul li{font-size:13px;color:var(--txt2);padding:7px 0;display:flex;gap:10px;align-items:center;border-bottom:1px solid var(--border)}
+.plan ul li:last-child{border:none}
+.plan ul li i{color:var(--accent);font-size:15px;flex-shrink:0}
+.plan .btn{width:100%;justify-content:center}
+.maint-bar{margin-top:16px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.maint-bar i{font-size:22px;color:var(--txt2)}
+.maint-bar div{flex:1}
+.maint-bar h4{font-size:14px;font-weight:500;margin-bottom:4px}
+.maint-bar p{font-size:13px;color:var(--txt2)}
+
+/* FAQ */
+.faq-list{margin-top:40px}
+.faq{padding:22px 0;border-bottom:1px solid var(--border)}
+.faq h4{font-size:15px;font-weight:500;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.faq h4 i{color:var(--accent);font-size:18px}
+.faq p{font-size:14px;color:var(--txt2);line-height:1.7;padding-left:28px}
+
+/* CTA */
+.cta-wrap{padding:0 48px 88px}
+.cta-inner{background:var(--txt);border-radius:16px;padding:72px 48px;text-align:center;color:var(--white)}
+.cta-inner h2{font-family:var(--font-display);font-size:clamp(28px,4vw,42px);margin-bottom:16px}
+.cta-inner p{font-size:16px;opacity:.7;margin-bottom:36px}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-white{background:var(--white);color:var(--txt)}
+.btn-white:hover{background:#eee}
+.btn-ghost{background:transparent;border:1.5px solid rgba(255,255,255,.3);color:var(--white)}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+
+/* FOOTER */
+footer{padding:32px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:var(--font-display);font-size:18px}
+.footer-logo span{color:var(--accent)}
+footer p{font-size:13px;color:var(--txt3)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-badge{animation:fadeUp .5s ease both}
+.hero h1{animation:fadeUp .6s .1s ease both}
+.hero p{animation:fadeUp .6s .2s ease both}
+.hero-btns{animation:fadeUp .6s .3s ease both}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .hero{padding:60px 20px 48px;min-height:auto}
+  .section{padding:56px 20px}
+  .divider{margin:0 20px}
+  .problems-wrap{padding:56px 20px}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .problems-grid{grid-template-columns:1fr}
+  .prob:nth-child(odd){border-right:none}
+  .process-row{grid-template-columns:1fr 1fr}
+  .step{border-right:none;border-bottom:1px solid var(--border)}
+  .step:nth-child(even){border-right:none}
+  .stats-row{grid-template-columns:1fr 1fr}
+  .plans-grid{grid-template-columns:1fr}
+  .cta-wrap{padding:0 20px 56px}
+  .cta-inner{padding:48px 24px}
+  footer{padding:24px 20px;flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .services-grid{grid-template-columns:1fr}
+  .process-row{grid-template-columns:1fr}
+  .stats-row{grid-template-columns:1fr 1fr}
+}
+</style>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%231A3A6B'/><text x='50%25' y='54%25' font-family='DM Serif Display,serif' font-size='20' font-weight='700' fill='white' text-anchor='middle' dominant-baseline='middle'>C</text></svg>"/>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Cyber<span>&nbsp;West</span></div>
+  <div class="nav-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#planes">Planes</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+  <div class="nav-cta">
+    <a href="https://wa.me/50600000000?text=Hola,%20quiero%20información%20sobre%20sus%20planes" class="btn btn-dark" target="_blank">Hablemos ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span></span> Agencia digital · Costa Rica</div>
+  <h1>Tu negocio merece una presencia digital <em>real</em></h1>
+  <p>Diseñamos páginas web profesionales y estrategias de marketing para negocios costarricenses que quieren crecer.</p>
+  <div class="hero-btns">
+    <a href="#planes" class="btn btn-dark">Ver planes y precios</a>
+    <a href="https://wa.me/50600000000?text=Hola%2C%20quiero%20una%20demo%20gratuita" class="btn btn-outline" target="_blank">Demo gratis</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<hr class="divider"/>
+
+<!-- SERVICIOS -->
+<div id="servicios">
+<div class="section">
+  <div class="section-label">Servicios</div>
+  <div class="section-title">Todo lo que necesitás para destacar en línea</div>
+  <div class="section-sub">Desde el diseño hasta que tus clientes te encuentren en Google.</div>
+  <div class="services-grid">
+    <div class="svc"><i class="ti ti-layout-2"></i><h3>Diseño web profesional</h3><p>Páginas rápidas, modernas y con dominio propio. Diseñadas para convertir visitas en clientes.</p></div>
+    <div class="svc"><i class="ti ti-device-mobile"></i><h3>Diseño responsive</h3><p>Tu sitio se ve perfecto en celular, tablet y computadora. El 70% del tráfico en CR es desde móvil.</p></div>
+    <div class="svc"><i class="ti ti-search"></i><h3>SEO y posicionamiento</h3><p>Aparecé en los primeros resultados de Google cuando tus clientes busquen lo que ofrecés.</p></div>
+    <div class="svc"><i class="ti ti-chart-bar"></i><h3>Marketing digital</h3><p>Estrategias en Google Ads y redes sociales para atraer más clientes cada mes.</p></div>
+    <div class="svc"><i class="ti ti-mail"></i><h3>Email corporativo</h3><p>Adiós al @gmail — hola al @tunegocio.com. Imagen profesional desde el primer contacto.</p></div>
+    <div class="svc"><i class="ti ti-refresh"></i><h3>Mantenimiento y soporte</h3><p>Actualizaciones, backups y cambios incluidos. Tu sitio siempre activo y seguro.</p></div>
+  </div>
+</div>
+</div>
+
+<hr class="divider"/>
+
+<!-- PROBLEMAS -->
+<div class="problems-wrap">
+  <div class="problems-inner">
+    <div class="section-label">¿Por qué ahora?</div>
+    <div class="section-title">Cada día sin web es un cliente que se va a la competencia</div>
+    <div class="problems-grid">
+      <div class="prob"><i class="ti ti-world-off"></i><div><h4>Sin sitio web</h4><p>Tus clientes te buscan en Google y no te encuentran</p></div></div>
+      <div class="prob"><i class="ti ti-brand-facebook"></i><div><h4>Solo Facebook</h4><p>Una página que Facebook puede cerrar en cualquier momento</p></div></div>
+      <div class="prob"><i class="ti ti-lock-open"></i><div><h4>Sin HTTPS</h4><p>Chrome muestra "Sitio no seguro" y aleja a los visitantes</p></div></div>
+      <div class="prob"><i class="ti ti-device-mobile-off"></i><div><h4>No funciona en celular</h4><p>Más del 70% de los usuarios navega desde el celular</p></div></div>
+      <div class="prob"><i class="ti ti-mail-off"></i><div><h4>Email de Gmail</h4><p>Un @gmail da mala imagen frente a clientes y empresas</p></div></div>
+      <div class="prob"><i class="ti ti-clock-off"></i><div><h4>Sitio desactualizado</h4><p>Un diseño viejo transmite descuido y ahuyenta clientes</p></div></div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- PROCESO -->
+<div id="proceso">
+<div class="section">
+  <div class="section-label">Proceso</div>
+  <div class="section-title">De cero a en línea en 2 semanas</div>
+  <div class="process-row">
+    <div class="step"><div class="step-num">01</div><h3>Reunión inicial</h3><p>Escuchamos tu negocio, tus clientes y lo que querés lograr.</p></div>
+    <div class="step"><div class="step-num">02</div><h3>Diseño y contenido</h3><p>Creamos el diseño y redactamos el contenido junto a vos.</p></div>
+    <div class="step"><div class="step-num">03</div><h3>Revisión</h3><p>Te mostramos el sitio y ajustamos hasta que estés 100% conforme.</p></div>
+    <div class="step"><div class="step-num">04</div><h3>Lanzamiento</h3><p>Tu sitio en vivo con dominio, SSL, email corporativo y SEO básico.</p></div>
+  </div>
+</div>
+</div>
+
+<hr class="divider"/>
+
+<!-- STATS -->
+<div class="section">
+  <div class="section-label">Resultados</div>
+  <div class="section-title">Números que importan</div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">+70%</div><p>Del tráfico en CR es desde celular</p></div>
+    <div class="stat"><div class="num">2 sem</div><p>Tiempo promedio de entrega</p></div>
+    <div class="stat"><div class="num">3x</div><p>Más consultas con SEO activo</p></div>
+    <div class="stat"><div class="num">100%</div><p>Proyectos entregados a tiempo</p></div>
+  </div>
+</div>
+
+<hr class="divider"/>
+
+<!-- PLANES -->
+<div id="planes">
+<div class="section">
+  <div class="section-label">Planes</div>
+  <div class="section-title">Precios claros, sin sorpresas</div>
+  <div class="section-sub">Todo en colones costarricenses. Empezá con lo que necesitás hoy.</div>
+  <div class="plans-grid">
+
+    <div class="plan">
+      <h3>Básico</h3>
+      <div class="price-main">₡45.000 <span style="font-size:16px;font-weight:400;color:var(--txt2)">setup</span></div>
+      <div class="price-sub">+ ₡15.000/mes</div>
+      <div class="desc">Para negocios que necesitan presencia digital rápida y asequible.</div>
+      <ul>
+        <li><i class="ti ti-check"></i>Landing page de 1 página</li>
+        <li><i class="ti ti-check"></i>Botón de WhatsApp</li>
+        <li><i class="ti ti-check"></i>Hosting incluido</li>
+        <li><i class="ti ti-check"></i>Diseño responsive</li>
+        <li><i class="ti ti-check"></i>Soporte básico</li>
+      </ul>
+      <a href="https://wa.me/50600000000?text=Me%20interesa%20el%20plan%20Básico" class="btn btn-outline" target="_blank">Empezar</a>
+    </div>
+
+    <div class="plan featured">
+      <div class="plan-badge">Más popular</div>
+      <h3>Negocio</h3>
+      <div class="price-main">₡180.000 <span style="font-size:16px;font-weight:400;color:var(--txt2)">único</span></div>
+      <div class="price-sub">+ ₡20.000/mes mantenimiento</div>
+      <div class="desc">Para negocios que quieren crecer y aparecer en Google Maps y búsquedas.</div>
+      <ul>
+        <li><i class="ti ti-check"></i>Sitio web 3–5 páginas</li>
+        <li><i class="ti ti-check"></i>SEO básico</li>
+        <li><i class="ti ti-check"></i>Formulario de contacto</li>
+        <li><i class="ti ti-check"></i>Dominio .cr o .com incluido</li>
+        <li><i class="ti ti-check"></i>Google Maps integrado</li>
+        <li><i class="ti ti-check"></i>WhatsApp + email corporativo</li>
+      </ul>
+      <a href="https://wa.me/50600000000?text=Estoy%20interesado%20en%20el%20Plan%20Negocio" class="btn btn-blue" target="_blank">Empezar ↗</a>
+    </div>
+
+    <div class="plan">
+      <h3>Premium</h3>
+      <div class="price-main">₡95.000 <span style="font-size:16px;font-weight:400;color:var(--txt2)">/mes</span></div>
+      <div class="price-sub">Pago mensual, cancelá cuando querás</div>
+      <div class="desc">Para negocios que quieren escalar con automatización y campañas activas.</div>
+      <ul>
+        <li><i class="ti ti-check"></i>Web completa incluida</li>
+        <li><i class="ti ti-check"></i>Automatizaciones</li>
+        <li><i class="ti ti-check"></i>CRM básico</li>
+        <li><i class="ti ti-check"></i>Campañas Meta / Google</li>
+        <li><i class="ti ti-check"></i>Analíticas mensuales</li>
+        <li><i class="ti ti-check"></i>Mantenimiento prioritario</li>
+      </ul>
+      <a href="https://wa.me/50600000000?text=Estoy%20interesado%20en%20el%20Plan%20Premium" class="btn btn-outline" target="_blank">Empezar</a>
+    </div>
+
+  </div>
+  <div class="maint-bar">
+    <i class="ti ti-tools"></i>
+    <div><h4>Mantenimiento adicional</h4><p>¿Ya tenés web y solo necesitás soporte, backups y cambios? Planes desde ₡20.000/mes.</p></div>
+    <a href="https://wa.me/50600000000?text=Estoy%20interesado%20en%20el%20Plan%20de%20Mantenimiento" class="btn btn-outline" target="_blank">Ver detalles</a>
+  </div>
+</div>
+</div>
+
+<hr class="divider"/>
+
+<!-- FAQ -->
+<div id="contacto">
+<div class="section">
+  <div class="section-label">Preguntas frecuentes</div>
+  <div class="section-title">¿Tenés dudas?</div>
+  <div class="faq-list">
+    <div class="faq"><h4><i class="ti ti-clock"></i>¿Cuánto tarda en estar lista mi página?</h4><p>Entre 10 y 14 días desde la reunión inicial hasta el sitio publicado en vivo.</p></div>
+    <div class="faq"><h4><i class="ti ti-device-laptop"></i>¿Necesito saber de tecnología?</h4><p>No. Te entregamos el sitio listo y te enseñamos a hacer cambios simples. Para el resto, estamos disponibles.</p></div>
+    <div class="faq"><h4><i class="ti ti-arrows-up"></i>¿Puedo empezar con el plan Básico y crecer después?</h4><p>Sí. Podés empezar con el Básico y escalar al plan Negocio o Premium en cualquier momento sin perder tu contenido.</p></div>
+    <div class="faq"><h4><i class="ti ti-map-pin"></i>¿Trabajás con negocios fuera de San José?</h4><p>Sí, trabajamos con negocios de todo Costa Rica. Las reuniones son por WhatsApp o Zoom.</p></div>
+    <div class="faq"><h4><i class="ti ti-credit-card"></i>¿Qué forma de pago aceptan?</h4><p>Transferencia SINPE Móvil, depósito bancario o efectivo. Sin complicaciones.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-inner">
+    <h2>¿Listo para tener tu página web?</h2>
+    <p>Escribinos hoy y te respondemos en menos de 24 horas.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/50600000000?text=Quiero%20empezar%20con%20mi%20página%20web" class="btn btn-white" target="_blank">Escribir por WhatsApp ↗</a>
+      <a href="mailto:cyberwest59@gmail.com" class="btn btn-ghost">cyberwest59@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Cyber<span>&nbsp;West</span></div>
+  <p>Costa Rica · Páginas web y marketing digital</p>
+  <p>© 2026 Cyber West. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
